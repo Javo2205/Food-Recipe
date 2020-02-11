@@ -15,6 +15,8 @@ import { CenaComponent } from './components/hora-comida/cena/cena.component';
 import { ColacionComponent } from './components/hora-comida/colacion/colacion.component';
 import { RecetasComponent } from './components/recetas/recetas.component';
 import { NewRecipeComponent } from './components/food-recipe/new-recipe/new-recipe.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { AuthGuard } from './services/auth.guard';
 
 const appRoutes: Routes = [
   { path: 'inicio', component: InicioComponent },
@@ -24,6 +26,11 @@ const appRoutes: Routes = [
   { path: 'cena', component: CenaComponent },
   { path: 'colacion', component: ColacionComponent },
   { path: 'receta/crear', component: NewRecipeComponent },
+
+  { path: 'perfil', 
+    component: PerfilComponent,
+    canActivate: [AuthGuard] },
+
   { path: '**', component: InicioComponent }
 ];
 
@@ -39,7 +46,8 @@ const appRoutes: Routes = [
     CenaComponent,
     ColacionComponent,
     RecetasComponent,
-    NewRecipeComponent
+    NewRecipeComponent,
+    PerfilComponent
   ],
   imports: [
     RouterModule.forRoot(

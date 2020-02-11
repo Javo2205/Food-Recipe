@@ -1,10 +1,6 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  faSearch
-} from '@fortawesome/free-solid-svg-icons';
+import {Component,OnInit} from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -12,9 +8,8 @@ import {
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  faSearch = faSearch
   
-  constructor() {}
+  constructor(public auth:AuthService) {}
 
   ngOnInit() {}
 

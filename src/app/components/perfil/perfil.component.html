@@ -1,0 +1,25 @@
+<div class="container w-75 p-2">
+  <h2>Perfil del Usuario</h2>
+  <hr>
+  <div *ngIf="auth.userProfile$ | async as profile" class="row text-left">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right">
+        <img class="img-fluid rounded" width="60%" height="60%" src="{{profile.picture}}" alt=""> </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p> Name: {{profile.name}} </p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p> Nickname: {{profile.nickname}} </p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p> Correo Electronico: {{profile.email}} </p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p class="disabled"> ID Token: {{profile.sub}} </p>
+      </div>
+    </div>
+  </div>
+
+</div>
