@@ -1,26 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import {RecetaService} from '../../services/receta.service';
+import {RecetaService} from '../../../../services/receta.service';
 import { ActivatedRoute } from '@angular/router';
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-
 @Component({
-  selector: 'app-recetas',
-  templateUrl: './recetas.component.html',
-  styleUrls: ['./recetas.component.css']
+  selector: 'app-cena-entrada',
+  templateUrl: './cena-entrada.component.html',
+  styleUrls: ['./cena-entrada.component.css']
 })
-export class RecetasComponent implements OnInit {
-
+export class CenaEntradaComponent implements OnInit {
   public recetas: any = [];
   faShareAlt = faShareAlt;
   faHeart = faHeart;
 
-  
   constructor(private _RecetaService: RecetaService, private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit() {
-    this._RecetaService.getRecetas().subscribe(
+  ngOnInit() {  
+    this._RecetaService.getCenaEntrada().subscribe(
       data => {
         this.recetas = data ;
         console.log(data);

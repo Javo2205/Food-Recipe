@@ -1,6 +1,6 @@
 <div class="container">
     <ol class="breadcrumb bg-transparent">
-      <li class="breadcrumb-item"><a href="#" routerLink="/inicio">Cena</a></li>
+      <li class="breadcrumb-item"><a href="#" routerLink="/inicio">Desayuno</a></li>
       <li class="breadcrumb-item active" aria-current="page">Tiempo</li>
     </ol>
     <div class="row mx-0">
@@ -15,29 +15,20 @@
             </button></div>
   
           <!-- direccion a recetas de tiempo entrada -->
-          <div class="col-sm-6 col-lg-4"><button type="button" class="btn">
+          <div class="col-sm-6 col-lg-4"><button [routerLink]="['/desayuno/entrada']" type="button" class="btn">
               <img class="img-fluid svg-efec" src="../../../assets/tiempos_comida/soup.svg" width="80%" height="80%"
                 alt="">
               <h6 class="p-3">Entrada</h6>
             </button></div>
   
           <!-- direccion a recetas de tiempo plato fuerte -->
-          <div class="col-sm-6 col-lg-4"><button type="button" class="btn">
+          <div class="col-sm-6 col-lg-4"><button [routerLink]="['/desayuno/plato-fuerte']" type="button" class="btn">
               <img class="img-fluid" src="../../../assets/tiempos_comida/fork.svg" width="80%" height="80%" alt="">
               <h6 class="p-3">Plato fuerte</h6>
             </button></div>
   
           <div class="w-100"></div>
   
-          <div class="col-lg-4 p-2"><button type="button" class="btn">
-              <img class="img-fluid" src="../../../assets/tiempos_comida/pudding.svg" width="80%" height="80%" alt="">
-              <h6 class="p-3">Postre</h6>
-            </button></div>
-  
-          <div class="col-lg-4 p-2"><button type="button" class="btn">
-              <img class="img-fluid" src="../../../assets/tiempos_comida/snack.svg" width="80%" height="80%" alt="">
-              <h6 class="p-3">Snack</h6>
-            </button></div>
   
         </div>
       </div>
