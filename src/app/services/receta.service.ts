@@ -4,25 +4,34 @@ import { HttpClient, HttpHeaders, HttpRequest, HttpEvent } from '@angular/common
 import { map, catchError, tap } from 'rxjs/operators';import { Router } from '@angular/router';
 import { formatDate, DatePipe } from '@angular/common';
 import { Receta } from "../components/recetas/recetas"
+import { RecetaSimple } from '../components/recetas/recetasSimple';
 
 @Injectable()
 export class RecetaService{
 
-private url:string='http://localhost:8080/RobustRounce/Recetas/'
-private urlId:string='http://localhost:8080/RobustRounce/Recetas/FindbyId'
+
+private url:string='http://localhost:8080/RobustRounce/recetasSimples';
+/* private urlId:string='http://localhost:8080/RobustRounce/Recetas/FindbyId';*/
+private httpHeaders = new HttpHeaders();
+
 
     constructor(private http: HttpClient, private router: Router){
       
     }
 
     //Obtener las recetas general
-    getRecetas(): Observable<Receta[]> {
-        return this.http.get<Receta[]>("http://localhost:8080/RobustRounce/Recetas/");
+    getRecetas(): Observable<RecetaSimple[]> {
+        return this.http.get<RecetaSimple[]>(this.url);
       } 
 
-      getRecetaById(id:number): Observable<Receta> {      
+     //Crear receta
+     save( receta : RecetaSimple){
+       return this.http.post<RecetaSimple>(this.url, receta);
+     }
+
+    /* getRecetaById(id:number): Observable<Receta> {      
         return this.http.get<Receta>(`${this.urlId}/${id}`);
-      }
+      } */
      
 
     /* -------------------- Desayuno -------------------- */

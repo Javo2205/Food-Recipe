@@ -1,3 +1,6 @@
+import { HorarioComida } from './objetos/horarioComida';
+import { TiempoComida } from './objetos/tiempoComida';
+
 export class Receta {
 
     receta_id: number;
@@ -7,8 +10,8 @@ export class Receta {
 	ingredientes: string;
 	fecha_creacion: string;
 	fecha_modificacion: string;
-	horarioComida: string;
-	tiempoComida: string;
+	horarioComida: HorarioComida;
+	tiempoComida: TiempoComida;
 	proteina: string;
 	tiempoPreparacion: string;
 	tipoCoccion: string;

@@ -3,6 +3,8 @@ import {RecetaService} from '../../services/receta.service';
 import { ActivatedRoute } from '@angular/router';
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 
 @Component({
@@ -17,7 +19,7 @@ export class RecetasComponent implements OnInit {
   faHeart = faHeart;
 
   
-  constructor(private _RecetaService: RecetaService, private activatedRoute: ActivatedRoute) { }
+  constructor(private _RecetaService: RecetaService, private activatedRoute: ActivatedRoute, public auth : AuthService) { }
 
   ngOnInit() {
     this._RecetaService.getRecetas().subscribe(

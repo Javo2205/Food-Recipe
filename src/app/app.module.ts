@@ -48,7 +48,7 @@ import { ColacionSnackComponent } from './components/hora-comida/colacion/colaci
 
 const appRoutes: Routes = [
   { path: 'inicio', component: InicioComponent },
-  { path: 'recetas', component: RecetasComponent },
+  { path: 'recetario', component: RecetasComponent },
   { path: 'receta/:id', component: CardFoodComponent },
 
   { path: 'contacto', component: ContactoComponent },

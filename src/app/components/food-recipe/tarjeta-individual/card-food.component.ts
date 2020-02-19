@@ -17,10 +17,10 @@ export class CardFoodComponent implements OnInit {
               private _activatedRoute : ActivatedRoute) { }
 
   ngOnInit() {
-    this.ObtenerReceta();
-  }
+/*     this.ObtenerReceta();
+ */  }
 
-  ObtenerReceta() : void{
+  /* ObtenerReceta() : void{
     this._activatedRoute.params.subscribe(
       params => {
         let id = params['id'];
@@ -30,6 +30,6 @@ export class CardFoodComponent implements OnInit {
         });
       }
     )
-  }
+  } */
 
 }
